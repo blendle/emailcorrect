@@ -15,6 +15,10 @@ describe('emailcorrect', () => {
       expect(suggest('jesse@hotmial.con')).to.equal('jesse@hotmail.com');
     });
 
+    it('should return the input string if there are no suggestions', () => {
+      expect(suggest('jesse@hotmail.com')).to.equal('jesse@hotmail.com');
+    });
+
     it('should return the input string if the user with @ is missing', () => {
       expect(suggest('hotmial.con')).to.equal('hotmial.con');
     });
