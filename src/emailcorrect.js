@@ -1,19 +1,6 @@
-const TLD_MISTAKES = {
-  com: ['con', 'kom', 'cm', 'cmo', 'cim', 'cpm'],
-  nl: ['ml', 'ln', 'nk', 'bl'],
-  net: ['nt', 'met'],
-};
+import { TLD_MISTAKES, HOSTNAME_MISTAKES } from '../config/mistakes';
 
-const HOSTNAME_MISTAKES = {
-  gmail: ['gmai', 'gail', 'gmai', 'gnail', 'mgail', 'gmial', 'mgail', 'gamil'],
-  hotmail: [
-    'htmail', 'otmail', 'hotmal', 'hotmai', 'hotmial', 'hoitmail', 'homail',
-    'hotrmail', 'hotmil', 'hotmaill',
-  ],
-  live: ['lve', 'liv'],
-  yahoo: ['yhoo', 'yaho'],
-};
-
+/**
 function disectDomain(domain = '') {
   // Get TLD and hostname from domain.
   const parts = domain.split('.');
