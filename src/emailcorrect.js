@@ -47,7 +47,8 @@ function autoCorrect(mistakes, input) {
 export function suggest(email) {
   const { user, hostname, tld } = disect(email);
 
-  return compile(user,
+  return compile(
+    user,
     autoCorrect(hostnameMistakes, hostname),
     autoCorrect(tldMistakes, tld)
   );
