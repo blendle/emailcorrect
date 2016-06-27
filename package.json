@@ -1,0 +1,25 @@
+{
+  "name": "emailcorrect",
+  "version": "0.0.1",
+  "description": "Test and auto correct e-mail addresses",
+  "main": "index.js",
+  "scripts": {
+    "test": "script/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blendle/emailcorrect.git"
+  },
+  "keywords": [
+    "auto",
+    "correct",
+    "email",
+    "test"
+  ],
+  "author": "Jesse Dijkstra <jesse@blendle.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blendle/emailcorrect/issues"
+  },
+  "homepage": "https://github.com/blendle/emailcorrect#readme"
+}
