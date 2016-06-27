@@ -34,5 +34,9 @@ describe('emailcorrect', () => {
     it('should return the input string if the hostname is missing', () => {
       expect(suggest('jesse@.con')).to.equal('jesse@.con');
     });
+
+    it('should return undefined if the supplied argument is undefined', () => {
+      expect(suggest(undefined)).to.equal(undefined);
+    });
   });
 });
