@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint src/**/*.js",
-    "test:unit": "node --harmony --harmony_proxies ./node_modules/.bin/istanbul --colors --report=text --report=lcov cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --recursive --harmony_proxies --require ./test/setup.js",
+    "test:unit": "node ./node_modules/.bin/istanbul --colors --report=text --report=lcov cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
     "build:umd": "NODE_ENV=production webpack"
   },
