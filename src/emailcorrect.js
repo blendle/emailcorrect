@@ -14,16 +14,27 @@ const hostnameMistakes = {
   yahoo: ['yhoo', 'yaho'],
 };
 
+function last(value = []) {
+  return value[value.length - 1];
+}
+
+function butlast(value = []) {
+  return value.slice(0, value.length - 1);
+}
+
+function disectDomain(domain = '') {
+  // Get TLD and hostname from domain.
+  const parts = domain.split('.');
+  const tld = last(parts);
+  const hostname = butlast(parts).join('.');
+
+  return { hostname, tld };
+}
+
 function disect(email) {
   // Split up into user and domain.
-  const parts = email.split('@');
-  const user = parts[0];
-  const domain = parts[1];
-
-  // Get TLD and hostname from domain.
-  const domainParts = domain && domain.split('.');
-  const tld = domainParts && domainParts.pop();
-  const hostname = domainParts && domainParts.join('.');
+  const [user, domain] = email.split('@');
+  const { hostname, tld } = disectDomain(domain);
 
   return { user, hostname, tld };
 }
