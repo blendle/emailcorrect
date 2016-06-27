@@ -1,13 +1,12 @@
 const webpack = require('webpack');
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const env = process.env.NODE_ENV;
 
-module.exports = {
-  debug: true,
-  entry: './index.js',
+const config = {
+  entry: './src/emailcorrect.js',
   output: {
-    path: '.',
+    path: './dist/',
     filename: 'emailcorrect.min.js',
-    library: 'emailcorrect',
+    library: 'EmailCorrect',
     libraryTarget: 'umd',
   },
   module: {
@@ -25,14 +24,22 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-    }),
-  ],
+  plugins: [],
   eslint: {
     configFile: '.eslintrc',
   },
 };
+
+if (env === 'production') {
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compressor: {
+      pure_getters: true,
+      unsafe: true,
+      unsafe_comps: true,
+      screw_ie8: false,
+      warnings: false,
+    },
+  }));
+}
+
+module.exports = config;
