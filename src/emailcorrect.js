@@ -55,7 +55,7 @@ function autoCorrect(mistakes, input) {
   }, input);
 }
 
-export function suggest(email) {
+export function suggest(email = '') {
   const { user, hostname, tld } = disect(email);
 
   if (!user || !hostname || !tld) {
