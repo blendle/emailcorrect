@@ -1,10 +1,10 @@
-const tldMistakes = {
+const TLD_MISTAKES = {
   com: ['con', 'kom', 'cm', 'cmo', 'cim', 'cpm'],
   nl: ['ml', 'ln', 'nk', 'bl'],
   net: ['nt', 'met'],
 };
 
-const hostnameMistakes = {
+const HOSTNAME_MISTAKES = {
   gmail: ['gmai', 'gail', 'gmai', 'gnail', 'mgail', 'gmial', 'mgail', 'gamil'],
   hotmail: [
     'htmail', 'otmail', 'hotmal', 'hotmai', 'hotmial', 'hoitmail', 'homail',
@@ -14,19 +14,11 @@ const hostnameMistakes = {
   yahoo: ['yhoo', 'yaho'],
 };
 
-function last(value = []) {
-  return value[value.length - 1];
-}
-
-function butlast(value = []) {
-  return value.slice(0, value.length - 1);
-}
-
 function disectDomain(domain = '') {
   // Get TLD and hostname from domain.
   const parts = domain.split('.');
-  const tld = last(parts);
-  const hostname = butlast(parts).join('.');
+  const tld = parts.pop();
+  const hostname = parts.join('.');
 
   return { hostname, tld };
 }
@@ -64,7 +56,7 @@ export function suggest(email) {
 
   return compile(
     user,
-    autoCorrect(hostnameMistakes, hostname),
-    autoCorrect(tldMistakes, tld)
+    autoCorrect(HOSTNAME_MISTAKES, hostname),
+    autoCorrect(TLD_MISTAKES, tld)
   );
 }
