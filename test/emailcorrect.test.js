@@ -35,16 +35,17 @@ describe('emailcorrect', () => {
       expect(suggest('jesse@.con')).to.equal('jesse@.con');
     });
 
-    it('should return undefined if the supplied argument is undefined', () => {
-      expect(suggest(undefined)).to.equal(undefined);
+    it('should return the number parsed to a string if the supplied argument is a number', () => {
+      expect(suggest(1)).to.equal('1');
     });
 
-    it('should return null if the supplied argument is null', () => {
-      expect(suggest(null)).to.equal(null);
-    });
-
-    it('should return false if the supplied argument is false', () => {
-      expect(suggest(false)).to.equal(false);
+    it('should return an empty string if the supplied argument is not a string', () => {
+      expect(suggest(null)).to.equal('');
+      expect(suggest(undefined)).to.equal('');
+      expect(suggest(false)).to.equal('');
+      expect(suggest(true)).to.equal('');
+      expect(suggest({})).to.equal('');
+      expect(suggest([])).to.equal('');
     });
   });
 });

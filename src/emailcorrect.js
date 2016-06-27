@@ -35,10 +35,15 @@ function autoCorrect(mistakes, input) {
 }
 
 export function suggest(email) {
-  const { user, hostname, tld } = disect(email);
+  if (typeof email !== 'string' && typeof email !== 'number') {
+    return '';
+  }
+
+  const emailString = email.toString();
+  const { user, hostname, tld } = disect(emailString);
 
   if (!user || !hostname || !tld) {
-    return email;
+    return emailString;
   }
 
   return compile(
