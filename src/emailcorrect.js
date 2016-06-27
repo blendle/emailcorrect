@@ -23,9 +23,9 @@ function disectDomain(domain = '') {
   return { hostname, tld };
 }
 
-function disect(email = '') {
+function disect(email) {
   // Split up into user and domain.
-  const [user, domain] = email.split('@');
+  const [user, domain] = (email || '').split('@');
   const { hostname, tld } = disectDomain(domain);
 
   return { user, hostname, tld };

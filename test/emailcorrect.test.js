@@ -38,5 +38,13 @@ describe('emailcorrect', () => {
     it('should return undefined if the supplied argument is undefined', () => {
       expect(suggest(undefined)).to.equal(undefined);
     });
+
+    it('should return null if the supplied argument is null', () => {
+      expect(suggest(null)).to.equal(null);
+    });
+
+    it('should return false if the supplied argument is false', () => {
+      expect(suggest(false)).to.equal(false);
+    });
   });
 });
