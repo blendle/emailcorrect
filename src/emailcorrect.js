@@ -1,4 +1,5 @@
-import { TLD_MISTAKES, HOSTNAME_MISTAKES } from '../config/mistakes';
+import TLD_MISTAKES from './mistakes/tld';
+import HOSTNAME_MISTAKES from './mistakes/hostname';
 
 /**
  * @typedef DomainDisect
