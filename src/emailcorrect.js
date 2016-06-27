@@ -2,7 +2,6 @@ const tldMistakes = {
   com: ['con', 'kom', 'cm', 'cmo', 'cim', 'cpm'],
   nl: ['ml', 'ln', 'nk', 'bl'],
   net: ['nt', 'met'],
-  'tante.nel': ['nel'],
 };
 
 const hostnameMistakes = {
