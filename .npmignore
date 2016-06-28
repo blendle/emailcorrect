@@ -1,5 +1,3 @@
-script/
-test/
 node_modules/
 coverage/
 .gitignore
