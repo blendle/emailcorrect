@@ -83,16 +83,11 @@ function autoCorrect(mistakes, input) {
  * @param  {(String|Number)} email
  * @return {String}
  */
-export function suggest(email) {
-  if (typeof email !== 'string' && typeof email !== 'number') {
-    return '';
-  }
-
-  const emailString = email.toString();
-  const { user, hostname, tld } = disect(emailString);
+function suggest(email) {
+  const { user, hostname, tld } = disect(email);
 
   if (!user || !hostname || !tld) {
-    return emailString;
+    return email;
   }
 
   return compile(
@@ -101,3 +96,7 @@ export function suggest(email) {
     autoCorrect(TLD_MISTAKES, tld)
   );
 }
+
+module.exports = {
+  suggest,
+};

@@ -34,18 +34,5 @@ describe('emailcorrect', () => {
     it('should return the input string if the hostname is missing', () => {
       expect(suggest('jesse@.con')).to.equal('jesse@.con');
     });
-
-    it('should return the number parsed to a string if the supplied argument is a number', () => {
-      expect(suggest(1)).to.equal('1');
-    });
-
-    it('should return an empty string if the supplied argument is not a string', () => {
-      expect(suggest(null)).to.equal('');
-      expect(suggest(undefined)).to.equal('');
-      expect(suggest(false)).to.equal('');
-      expect(suggest(true)).to.equal('');
-      expect(suggest({})).to.equal('');
-      expect(suggest([])).to.equal('');
-    });
   });
 });
