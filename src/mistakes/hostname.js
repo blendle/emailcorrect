@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   gmail: ['gmai', 'gail', 'gmai', 'gnail', 'mgail', 'gmial', 'mgail', 'gamil'],
   hotmail: [
     'htmail', 'otmail', 'hotmal', 'hotmai', 'hotmial', 'hoitmail', 'homail',

@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import { suggest } from '../src/emailcorrect';
+const { expect } = require('chai');
+const { suggest } = require('../src/emailcorrect');
 
 describe('emailcorrect', () => {
   describe('#suggest()', () => {

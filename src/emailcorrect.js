@@ -1,5 +1,5 @@
-import TLD_MISTAKES from './mistakes/tld';
-import HOSTNAME_MISTAKES from './mistakes/hostname';
+const TLD_MISTAKES = require('./mistakes/tld');
+const HOSTNAME_MISTAKES = require('./mistakes/hostname');
 
 /**
  * @typedef DomainDisect
