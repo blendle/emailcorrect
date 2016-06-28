@@ -2,7 +2,7 @@
   "name": "emailcorrect",
   "version": "0.0.1",
   "description": "Test and auto correct e-mail addresses",
-  "main": "./src/emailcorrect.js",
+  "jsnext:main": "./src/emailcorrect.js",
   "scripts": {
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint src/**/*.js",
