@@ -60,9 +60,9 @@ function compile(user, hostname, tld) {
  *
  * @example
  * autoCorrect({ gmail: ['gmai', 'gnail'] }, 'gnail'}); // Returns gmail
- * @param  {[type]} mistakes [description]
- * @param  {[type]} input    [description]
- * @return {[type]}          [description]
+ * @param  {Object} mistakes
+ * @param  {String} input
+ * @return {String}
  */
 function autoCorrect(mistakes, input) {
   return Object.keys(mistakes).reduce((acc, solution) => {
@@ -80,7 +80,7 @@ function autoCorrect(mistakes, input) {
  * Creates a suggestion e-mail for the input. Returns an empty string for invalid
  * values. Valid input values are string and number.
  *
- * @param  {(String|Number)} email
+ * @param  {String} email
  * @return {String}
  */
 function suggest(email) {
