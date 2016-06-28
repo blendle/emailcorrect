@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+cd "$(dirname "$0")/.."
+
+PACKAGE_VERSION=`cat package.json | jsawk 'return this.version'`
+GIT_VERSION=`semver $(git describe --tags)`
+
+if [ "$PACKAGE_VERSION" != "$GIT_VERSION" ]; then
+  echo "Version in package.json ($PACKAGE_VERSION) and git describe ($GIT_VERSION) don't match. Exiting..."
+  exit 1
+fi
+
+echo "==> Preparing release ($PACKAGE_VERSION)"
+script/build
