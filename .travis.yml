@@ -1,12 +1,15 @@
 language: node_js
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - script/test
+- script/test
 deploy:
-  provider: script
-  skip_cleanup: true
-  script: script/deploy
+  provider: npm
+  email: service@blendle.com
+  api_key:
+    secure: ZucPRGeP1YJRsSClXe399hdtI01MPfLgiHbopWlR2trnxl1Z5Z6m86Y8TkA2eB+xndLeRNFl33jvnpOxgwwZ3A4RQjUxo2jlpLQTjd69G0OVN9UX5z2F/iBes6D5MDOySQ69UeBnFWWpFqsjPwpavOAl6FJ72WOigfhlCQvRxUBG0TzGp1Bg1+f+glirV+oDeKao20NS/mGhQsTVlnSJP4e0wUdkPd0jFLN0i/kjp013Iw748S1TXZ6UWNtSwOCFRZQKvbzXnelGoDeQ4KNycSIy4T4l5YoQKH7YpMezd8VF4VFxU/H7eH5g7GuJwnV+5y/xqgUbf0bRRKunoQAmyzijmC7961w+rdwtYNSNRcmT0K0eFnRRkOiEhphAizayNdlcD95GTth49cNtc6Rin91YznEa0TRmyj7xRfVrLFXf762iEOp0tngxZfOyA4H8InRXkOByptyUX047DWU2hYYhGJPNoTDE4b5GSlJlJV1tpicHmEE+HFoKqjD0QQmuR0Gd/yPnWczMdImvldBIC2y2Oan3MVhJL555oZhIIIbPU1nylxHIeTc4wzXlwSwQDgAL0+kPPJrLGKuME5FtDVQYFU0mmf98pl7B3EZOXMBA/9t76b6cGueY5VhVpa6NiSJ9s6evyXm83xxzQeJNIOUFyJ5gtR7kYq1Qhmd92S0=
   on:
     tags: true
+    repo: blendle/emailcorrect
+    condition: $(cat package.json | jsawk 'return this.version') = $(semver $(git describe --tags))
