@@ -6,9 +6,7 @@ script:
   - script/test
 after_script:
   - export NPM_PACKAGE_VERSION=$(semver $(node -p -e "require('./package.json').version"))
-  - export GIT_PACKAGE_VERSION=$(semver $(git describe --tags))
-  - echo $NPM_PACKAGE_VERSION
-  - echo $GIT_PACKAGE_VERSION
+  - export GIT_PACKAGE_VERSION=$(semver $(git describe --tags || echo "0.0.0"))
 deploy:
   provider: npm
   email: service@blendle.com
