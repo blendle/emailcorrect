@@ -7,6 +7,8 @@ script:
 before_deploy:
   - "export NPM_PACKAGE_VERSION=$(semver $(cat package.json | jsawk 'return this.version'))"
   - "export GIT_PACKAGE_VERSION=$(semver $(git describe --tags))"
+  - echo $NPM_PACKAGE_VERSION
+  - echo $GIT_PACKAGE_VERSION
 deploy:
   provider: npm
   email: service@blendle.com
