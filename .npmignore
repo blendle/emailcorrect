@@ -1,0 +1,6 @@
+node_modules/
+coverage/
+.gitignore
+.nvmrc
+.travis.yml
+npm-debug.log
