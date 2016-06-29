@@ -4,7 +4,7 @@ cache:
     - node_modules
 script:
   - script/test
-before_deploy:
+after_script:
   - "export NPM_PACKAGE_VERSION=$(semver $(cat package.json | jsawk 'return this.version'))"
   - "export GIT_PACKAGE_VERSION=$(semver $(git describe --tags))"
   - echo $NPM_PACKAGE_VERSION
