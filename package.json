@@ -1,6 +1,6 @@
 {
   "name": "emailcorrect",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Test and auto correct e-mail addresses",
   "main": "./src/emailcorrect.js",
   "scripts": {
