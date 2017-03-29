@@ -2,9 +2,7 @@
 
 Email correct is a utility library for auto-correcting a user's email address.
 
-[![Build Status](https://travis-ci.org/jessedijkstra/writing-api.svg?branch=master)](https://travis-ci.org/jessedijkstra/writing-api)
-
-
+[![Build Status](https://travis-ci.org/blendle/emailcorrect.svg?branch=master)](https://travis-ci.org/blendle/emailcorrect)
 
 ## Installation
 ```
