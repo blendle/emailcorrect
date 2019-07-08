@@ -47,5 +47,8 @@
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.0",
     "semver": "^5.1.1"
+  },
+  "resolutions": {
+    "handlebars": "^4.1.0"
   }
 }
